@@ -11,6 +11,10 @@ import { ComponentModule } from './components/component.module';
     CommonModule,
     LayoutModule,
     ComponentModule
+  ],
+  exports:[
+    LayoutModule,
+    ComponentModule
   ]
 })
 export class UiModule { }
