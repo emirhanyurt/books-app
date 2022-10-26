@@ -1,0 +1,104 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Kitaplar Ekleme Sayfası</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a routerLink="/" >Anasayfa</a></li>
+              <li class="breadcrumb-item"><a routerLink="book">Kitaplar</a></li>
+              <li class="breadcrumb-item active">Kitap Ekleme Sayfası</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Kitap Ekleme Sayfası</h3>
+  
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Quick Example</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form [formGroup]="addForm" (ngSubmit)="add()">
+              <div class="row">
+                <div class="col-md-4">
+                  <img class="img" [src]="currentImage == '' ? './assets/image/noimage.jpg':currentImage ">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label >Kitap Adı</label>
+                      <input type="text"
+                      formControlName="name"
+                       class="form-control"
+                       autocomplete="off"
+                       required
+                       minlength="3"
+                        placeholder="Kitap Adı Giriniz">
+                    </div>
+                    <div class="form-group">
+                      <label >Yazar</label>
+                      <input type="text"
+                       class="form-control"
+                       autocomplete="off"
+                       formControlName="writer"
+                       required
+                       minlength="3"
+                        placeholder="Kitap Adı Giriniz">
+                    </div>
+                    <div class="form-group">
+                      <label >Yayınlanma Tarihi</label>
+                      <input type="date"
+                       class="form-control"
+                       autocomplete="off"
+                       formControlName="publishDate"
+                       required
+                       
+                        placeholder="Kitap Adı Giriniz">
+                    </div>
+                    <div class="form-group">
+                      <label >Kitap Resmi</label>
+                      <input type="file"
+                       class="form-control"
+                       required
+                       formControlName="imageUrl"
+                       (change)="changeImage($event)"
+                        >
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+              </div>
+            </form>
+          </div>
+          <div class="card-footer">
+          </div>
+        </div>
+      </section>
+  </div>
+

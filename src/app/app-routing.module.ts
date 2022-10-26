@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddBookComponent } from './UI/components/books/add-book/add-book.component';
 import { BooksComponent } from './UI/components/books/books.component';
 import { HomeComponent } from './UI/components/home/home.component';
 import { LayoutComponent } from './UI/layout/layout/layout.component';
@@ -15,6 +16,10 @@ const routes: Routes = [
     {
       path:'book',component:BooksComponent,
       loadChildren: () => import('./UI/components/books/books.module').then(m=>m.BooksModule)
+    },
+    {
+      path:'book/add',component:AddBookComponent,
+      loadChildren: () => import('./UI/components/books/add-book/add-book.module').then(m=>m.AddBookModule)
     }
   ]},
   {
